@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+   <meta name="viewport" content="width=device-width, initial-scale=1"/>
+   <title>A style</title>
+   <link rel="stylesheet" href="css/main.css"/>
+   <link rel="stylesheet" href="css/media.css"/>
+   <link rel="stylesheet" href="css/animate.css">
+   <link rel="stylesheet" href="css/bootstrap.css">
+   <link rel="stylesheet" href="css/sub.css"/>
+   <link rel="stylesheet" href="css/list.css"/>
+   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+   <link href="https://fonts.googleapis.com/css?family=Poiret+One" rel="stylesheet">
+   <style>
+      .wishlist-btn:hover{
+         background-color: rgb(249,234,206);
+      }
+      .itemView{
+         cursor: pointer;
+      }
+   </style>
+</head>
+
+<body>
+<!--TO TOP-->
+<a href="javascript:" id="return-to-top"> <span>TO TOP <i class="fas fa-long-arrow-alt-up"></i> </span></a>
+
+<!--header-->
+<header id="header1">
+   <div id="hwraper">
+
+      <h1 id="logo">
+      <a href="index.html"><img src="image/etc/logo.png" alt="logo"></a>
+      </h1>
+      <ul id="hnavi">
+         <li><a href="javascript:goList('outer')" class="cool-link">OUTER</a></li>
+         <li><a href="javascript:goList('top')" class="cool-link">TOP</a></li>
+         <li><a href="javascript:goList('bottom')" class="cool-link">BOTTOM</a></li>
+         <li><a href="javascript:goList('acc')" class="cool-link">ACC</a></li>
+         <li><a href="javascript:goList('shoes')" class="cool-link">SHOES</a></li>           
+      </ul>
+
+      <!--media toggle:hidden now-->
+      <div id="mediaTog">
+         <label>
+         <input id="mediaCheck" type='checkbox'>
+            <span class='menu'>
+               <span class='hamburger'></span>
+            </span>
+         <ul id="labelul">
+            <li><a href="javascript:goList('outer')">OUTER</a></li>
+            <li><a href="javascript:goList('top')">TOP</a></li>
+            <li><a href="javascript:goList('bottom')">BOTTOM</a></li>
+            <li><a href="javascript:goList('acc')">ACC</a></li>
+            <li><a href="javascript:goList('shoes')">SHOES</a></li>
+         </ul>
+         </label>
+      </div>
+      
+      <div class="search" >            
+         <span class="searchbox">   
+          <input type="search" placeholder="Search..." />
+         </span>
+         <i class="fa fa-search" style="font-size:1.7em; color:Tomato"></i>            
+      </div>
+
+      <div id="icon" style="font-size:1.5em;">  
+         <a href="saveList.html"><i class="far fa-heart"></i></a>
+         <a href="login.html"><i class="far fa-user-circle"></i></a>
+      </div>
+
+   </div>
+</header>
+
+
+<!--container-->
+<div class="container">
+   <!--cart-->
+   <div class="cart">
+      <table>
+         <thead class="cart_row cart_header">
+            <tr>
+               <th colspan="5">
+                  <h2><br>You have <strong id="item-num"></strong> item in your wish list</h2>
+               </th>
+            </tr>
+         </thead>
+         <tbody id="cart-table-tbody">
+            <tr class="tbody-tr" style="display:none">
+               <td width="15%">
+                  <img class="itme-img itemView" src="image/acc/01.jpg" class="listitem-image" style="max-width:100%">                
+               </td>
+               <!-- <td width="3%">
+                                 
+               </td> -->
+               <td width="40%" style="padding-left:15px">
+                  <div class="list-view-item__title">
+                     <div class="grid-list-item-info">
+                     <p class="item-title1 itemView" >BONSAI BAG LARGE</p>
+                     <span class="item-title2 itemView">SIMON MILLER</span>
+                     <span ></span>
+                     </div>
+                  </div>                  
+                  <p>
+                     <button class="btn wishlist-btn black">Remove</button>       
+                  </p>
+               </td>
+               <td width="15%" id="item-price">350,000원
+               </td>
+               <td width="20%"></td>
+               <td width="10%">
+                  <a href="javascript:" class="btn_w white">BUY</a>
+               </td>
+            </tr>        
+         </tbody>
+      </table>       
+   </div>
+   <!--cart-->
+
+</div>
+<!--container-->
+<!--footer-->
+<footer id="footer1">
+   <div id="fwarper">
+      <ul id="lists">
+         <li><a href="aboutus.html">About us</a></li>
+         <li><a href="#">Shipping Information</a></li>
+         <li><a href="#">Return & Exchanges</a></li>
+      </ul>
+
+      <div id="btn">
+         <p><a href="contact.html">CONTACT & HELP</a></p>
+         <p><a href="#">FOLLOW US</a></p>
+      </div>
+
+   </div>
+</footer>
+<!--end of footer-->
+
+<script src="js/jquery-3.3.1.js"></script>
+<script src="js/bootstrap.js"></script>   
+<script src="js/item.js"></script>  
+<script>
+
+   var saveList=localStorage.aStyleSaveList;
+   if (saveList==undefined){
+      saveList="[]";
+   }
+   // 목록 보여주기
+   var arr=JSON.parse(saveList);
+
+   // 상품있을때 호출되는 함수 
+   var  itmeIn = function(arr){
+
+      $("#item-num").text(arr.length);
+      if(arr.length==0){
+         $(".cart").css("height", "350px");
+      }
+      for(var i=0; i<arr.length; i++){
+      
+         if(arr[i].Item=="outer"){
+            itemInfo=outerInfo;
+         }else if(arr[i].Item=="top"){
+            itemInfo=topInfo;
+         }else if(arr[i].Item=="bottom"){
+            itemInfo=bottomInfo;
+         }else if(arr[i].Item=="acc"){
+            itemInfo=accInfo;
+         }else if(arr[i].Item=="shoes"){
+            itemInfo=shoesInfo;
+         }
+
+         // append
+         // 출력이미지 
+         var imageNm="0"+(arr[i].ItemIndex+1);
+         imageNm=imageNm.substring(imageNm.length-2, imageNm.length)+".jpg";
+
+         var cloneTr = $('.tbody-tr').clone();
+
+         cloneTr.appendTo('#cart-table-tbody')
+               .attr("id",i).addClass("newTr")
+                 .css("display"," table-row");
+
+         cloneTr.find(".wishlist-btn").click(function(){
+            if(confirm("WISH LIST에서 삭제하시겠습니까?")){
+               var removeIdx=parseInt($(this).parents("tr").attr("id"));
+               deleteWish(removeIdx);
+            }
+            
+         })
+         $("#"+i).removeClass("tbody-tr");
+         $("#"+i).find(".itme-img").attr("src","image/"+arr[i].Item +"/"+imageNm);
+         $("#"+i).find(".item-title1").text(itemInfo[arr[i].ItemIndex].title1.toUpperCase());
+         $("#"+i).find(".item-title2").text(itemInfo[arr[i].ItemIndex].title2.toUpperCase());
+         $("#"+i).find("#item-price").text(itemInfo[arr[i].ItemIndex].price);       
+
+      }
+   };
+   
+   /* 
+      현재존재하거나 미래에 추가될 문서 객체의 이벤트 처리하는 방법 
+      itemView 페이지 이동
+   */
+   $(document).on("click", ".itemView", function(){     
+      var id=parseInt($(this).parents("tr").attr("id"));      
+      localStorage.aStyleItem=arr[id].Item;
+      localStorage.aStyleItemIndex=arr[id].ItemIndex;
+      location.href="itemView.html";
+   });
+
+   // 삭제
+   function deleteWish(removeIdx){
+      arr.splice(removeIdx,1);
+      saveList=JSON.stringify(arr);
+      localStorage.aStyleSaveList=saveList;
+      arr=JSON.parse(saveList);
+      $("#cart-table-tbody").children(".newTr").remove();
+      itmeIn(arr);
+   }
+   
+   if(arr.length==0){ // 상품 없을때 
+      $("#item-num").text(arr.length);
+      $(".cart").css("height", "350px");
+
+   }else{// 상품 있을때
+
+      itmeIn(arr); 
+   }
+
+   delete localStorage.aStyleItem;
+
+</script>
+<script src="js/astyle.js"></script> 
+</body>
+</html>

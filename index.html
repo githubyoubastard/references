@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+   <meta name="viewport" content="width=device-width, initial-scale=1"/>
+   <title>A style</title>
+   <link rel="stylesheet" href="css/main.css"/>
+   <link rel="stylesheet" href="css/media.css"/>
+   <link rel="stylesheet" href="css/animate.css">
+   <link rel="stylesheet" href="css/bootstrap.css">
+   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+   <link href="https://fonts.googleapis.com/css?family=Poiret+One" rel="stylesheet">   
+</head>
+<body>
+<!--TO TOP-->
+<a href="javascript:" id="return-to-top"> <span>TO TOP <i class="fas fa-long-arrow-alt-up"></i> </span></a>
+
+<!--header-->
+<header id="header1">
+   <div id="hwraper">
+
+      <h1 id="logo">
+      <a href="index.html"><img src="image/etc/logo.png" alt="logo"></a>
+      </h1>
+      <ul id="hnavi">
+         <li><a href="javascript:goList('outer')" class="cool-link">OUTER</a></li>
+         <li><a href="javascript:goList('top')" class="cool-link">TOP</a></li>
+         <li><a href="javascript:goList('bottom')" class="cool-link">BOTTOM</a></li>
+         <li><a href="javascript:goList('acc')" class="cool-link">ACC</a></li>
+         <li><a href="javascript:goList('shoes')" class="cool-link">SHOES</a></li>           
+      </ul>
+
+      <!--media toggle:hidden now-->
+      <div id="mediaTog">
+         <label>
+         <input id="mediaCheck" type='checkbox'>
+            <span class='menu'>
+               <span class='hamburger'></span>
+            </span>
+         <ul id="labelul">
+            <li><a href="javascript:goList('outer')">OUTER</a></li>
+            <li><a href="javascript:goList('top')">TOP</a></li>
+            <li><a href="javascript:goList('bottom')">BOTTOM</a></li>
+            <li><a href="javascript:goList('acc')">ACC</a></li>
+            <li><a href="javascript:goList('shoes')">SHOES</a></li>
+         </ul>
+         </label>
+      </div>
+      
+      <div class="search" >            
+         <span class="searchbox">   
+          <input type="search" placeholder="Search..." />
+         </span>
+         <i class="fa fa-search" style="font-size:1.7em; color:Tomato"></i>            
+      </div>
+
+      <div id="icon" style="font-size:1.5em;">  
+         <a href="saveList.html"><i class="far fa-heart"></i></a>
+         <a href="login.html"><i class="far fa-user-circle"></i></a>
+      </div>
+
+   </div>
+</header>
+
+<!--container-->
+<div class="container" id="indexBody">
+   <!-- 첫 번째 이미지 -->
+   <div class="row" id="first" >
+      <div class="col-sm-6 img_area">
+         <div class="cover"></div>   
+         <img src="image/index/01.jpg">      
+      </div>
+      <div class="col-sm-6 col-sm-pull-1 ment_area">
+         <img src="image/index/hotSummer.png">
+      </div>
+      <div class="showD_left showDetails show_ment col-sm-1 col-sm-pull-2 col-xs-2 " style="z-index: 2" >
+         <img src="image/index/right-arrow.png">&nbsp;<span class="glyphicon glyphicon-heart"></span>
+      </div>
+      <div class="showD_right showDetails show_ment  col-sm-2 col-sm-pull-2 col-xs-3 " style="z-index: 2">
+         <b>SHOW DETAILS&nbsp;</b>&nbsp;<span class="glyphicon glyphicon-heart" style="color: black;"></span>
+      </div>
+     
+   </div>
+  
+ 
+
+   <!-- 공백 -->
+   <div class="spacer"></div>
+   <!-- 두 번째 이미지 -->
+   <div class="row" id="second">
+     <div class="col-sm-6 col-sm-push-6 img_area">
+         <div class="cover"></div> 
+         <img src="image/index/02.jpg">
+      </div>
+      <div class="col-sm-6 col-sm-pull-5  ment_area">
+         <img src="image/index/specialSale.png">
+      </div>
+      <div class="showD_left showDetails show_ment col-sm-1 col-xs-2" style="z-index: 2" >
+         <img src="image/index/right-arrow.png">&nbsp;<span class="glyphicon glyphicon-heart"></span>
+      </div>
+      <div class="showD_right showDetails show_ment col-sm-2  col-xs-3" style="z-index: 2">
+         <b>BUY SALE ITEMS&nbsp;</b>&nbsp;<span class="glyphicon glyphicon-heart" style="color: black;"></span>
+      </div>
+   </div>
+   <!-- 공백 -->
+   <div class="spacer"></div>
+   <!-- 세 번째 이미지 -->
+   <div class="row" id="third">
+      <div class="col-sm-6  img_area">
+         <div class="cover"></div>
+         <img src="image/index/03.png">
+      </div>
+      <div class="col-sm-6 col-sm-pull-1 ment_area">
+         <img src="image/index/weeklyBest.png">
+      </div>
+      <div class="showD_left showDetails show_ment col-sm-1 col-sm-pull-2 col-xs-2"  style="z-index: 2" >
+         <img src="image/index/right-arrow.png">&nbsp;<span class="glyphicon glyphicon-heart"></span>
+      </div>
+      <div class="showD_right showDetails show_ment  col-sm-2 col-sm-pull-2 col-xs-3"  style="z-index: 2"  >
+         <b>SHOW MORE&nbsp;</b>&nbsp;<span class="glyphicon glyphicon-heart" style="color: black;"></span>
+      </div>
+   </div>
+</div>
+<!--end of div-->
+
+<!--footer-->
+<footer id="footer1">
+   <div id="fwarper">
+      <ul id="lists">
+         <li><a href="aboutus.html">About us</a></li>
+         <li><a href="#">Shipping Information</a></li>
+         <li><a href="#">Return & Exchanges</a></li>
+      </ul>
+
+      <div id="btn">
+         <p><a href="#contact.html">CONTACT & HELP</a></p>
+         <p><a href="#">FOLLOW US</a></p>
+      </div>
+
+   </div>
+</footer>
+<!--end of footer-->
+
+<script src="js/jquery-3.3.1.js"></script>
+<script src="js/bootstrap.js"></script>   
+<script>  
+   $(".showDetails").mouseover(function(){
+      $(".showD_left>span").css("color","black");
+      $(".showD_right").addClass("reverse_ment");
+   })
+   $(".showDetails").mouseout(function(){
+      $(".showD_left>span").css("color","white");
+      $(".showD_right").removeClass("reverse_ment");
+
+   })
+
+   // 이미지 div의 아이디를 담은 배열
+   var imagesId=["#first","#second","#third"];
+   // 이미지 div를 관리할 index
+   var idx=0;
+
+   // 로딩시 첫번째 이미지 출력
+   imagesLeftAni($(imagesId[idx]));
+
+   $(window).on("scroll", function(){
+      // 위쪽으로 스크롤 된 길이 구하기
+      var scrollTop=$(window).scrollTop();
+      // window의 높이
+      var windowHeight=$(window).height();
+      // 총 이동한 스크롤 길이
+      var movedHeight = scrollTop+windowHeight;
+      // 1000만큼 움직였을 때 3번째 이미지 출력
+      if(movedHeight>=1000){
+         idx=1;
+         imagesRightAni($(imagesId[idx]));
+      }
+      // 2000만큼 움직였을 때 3번째 이미지 출력
+      if(movedHeight>=2000){
+         idx=2;
+         imagesLeftAni($(imagesId[idx]));
+      }
+   });
+
+   function imagesLeftAni($input){
+      $input.show(function(){
+         $input.children(".img_area").addClass("animated slideInUp").fadeIn({
+            duration:1500,
+            complete:function(){
+               $(this).children(".cover").addClass("animated slideOutRight").fadeOut(1000,function(){
+                  $input.children(".ment_area").fadeIn(800,function(){
+                     $input.children(".showDetails").css("display","flex").addClass("animated slideInLeft");
+                  }).addClass("animated slideInRight");
+               });
+            }
+         });
+      });   
+   };
+
+    function imagesRightAni($input){
+      $input.show(function(){
+         $input.children(".img_area").addClass("animated slideInUp").fadeIn({
+            duration:1500,
+            complete:function(){
+               $(this).children(".cover").addClass("animated slideOutLeft").fadeOut(1000,function(){
+                  $input.children(".ment_area").fadeIn(800,function(){
+                     $input.children(".showDetails").css("display","flex").addClass("animated slideInLeft");
+                  }).addClass("animated slideInLeft");
+               });
+            }
+         });
+      });   
+   };
+
+   delete localStorage.aStyleItem;
+
+</script>
+<script src="js/astyle.js"></script> 
+</body>
+</html>
